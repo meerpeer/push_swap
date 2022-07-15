@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/19 11:56:14 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/05/19 13:17:25 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/15 14:02:08 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_malloc(size_t size)
 
 	ptr = malloc(size);
 	if (!ptr)
-		exit(0);
+		exit(1);
 	return (ptr);
 }
