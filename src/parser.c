@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   parser.c                                           :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/15 13:38:03 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/15 15:02:00 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   parser.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/15 13:38:03 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/18 18:23:11 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,19 @@ void	error_exit(void)
 t_numbers	*create_linked_number_list(int *numbers)
 {
 	t_numbers	*number_list;
+	
+	int			i;
 
-	// 
-	return (number_list)
+	i = 0;
+	while (numbers[i])
+	{
+		if(!number_list)
+			number_list = new_element(numbers[i]);
+		else
+			list_add_to_back(&number_list, new_element(numbers[i]));
+		i++;
+	}
+	return (number_list);
 }
 /*
 while (numbers[i])
@@ -61,6 +71,7 @@ t_numbers	*parse_input(int argc, char **argv)
 	t_numbers	*number_list;
 	int			*numbers;
 
+	number_list = NULL;
 	numbers = ft_calloc(argc, sizeof(int));
 	i = 0;
 	if (argc <= 1)
@@ -75,7 +86,8 @@ t_numbers	*parse_input(int argc, char **argv)
 		argc--;
 		i++;
 	}
-	number_list = create_linked_number_list(numbers);
+	if(numbers)
+		number_list = create_linked_number_list(numbers);
 	free(numbers);
 	return (number_list);
 }

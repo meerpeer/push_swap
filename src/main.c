@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/15 13:14:33 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/15 14:30:03 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/15 13:14:33 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/18 18:27:37 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,14 @@ int	main(int argc, char **argv)
 	t_numbers	*stack_b;
 
 	stack_a = parse_input(argc, argv);
-	free(numbers);
+
+	t_numbers	*temp;
+	temp = stack_a;
+	while (temp)
+	{
+		ft_printf("number = %i\n", stack_a->number);
+		temp = stack_a->next;
+	}
 	stack_b = NULL;
 	return (0);
 }

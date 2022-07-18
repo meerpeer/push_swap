@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   Push_Swap.h                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/15 13:10:18 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/15 14:30:38 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/15 13:10:18 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/18 18:20:39 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 typedef struct s_numbers
 {
-	int				*content;
-	int				*number;
-	struct s_list	*next;
+	int					*number;
+	int					*rank;
+	struct s_numbers	*next;
 }					t_numbers;
 
 typedef enum e_bool
@@ -31,5 +31,9 @@ typedef enum e_bool
 }			t_bool;
 
 t_numbers	*parse_input(int argc, char **argv);
+
+// list functions
+t_numbers	*new_element(int number);
+void		list_add_to_back(t_numbers **lst, t_numbers *new_number);
 
 #endif
