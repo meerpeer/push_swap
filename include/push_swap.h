@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:10:18 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/18 18:20:39 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/20 11:24:39 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 typedef struct s_numbers
 {
-	int					*number;
-	int					*rank;
+	int					number;
+	int					rank;
 	struct s_numbers	*next;
 }					t_numbers;
 

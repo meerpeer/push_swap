@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:38:03 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/18 18:23:11 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/20 12:08:17 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ void	error_exit(void)
 t_numbers	*create_linked_number_list(int *numbers)
 {
 	t_numbers	*number_list;
-	
 	int			i;
 
 	i = 0;
+	number_list = NULL;
 	while (numbers[i])
 	{
 		if(!number_list)
@@ -55,6 +55,7 @@ t_numbers	*create_linked_number_list(int *numbers)
 		else
 			list_add_to_back(&number_list, new_element(numbers[i]));
 		i++;
+		
 	}
 	return (number_list);
 }
