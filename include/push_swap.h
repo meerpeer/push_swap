@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:10:18 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/20 11:24:39 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/20 12:31:27 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,11 @@ t_numbers	*parse_input(int argc, char **argv);
 // list functions
 t_numbers	*new_element(int number);
 void		list_add_to_back(t_numbers **lst, t_numbers *new_number);
+
+// helper functions
+t_bool	is_int(char *str);
+t_bool	stack_is_ordered(t_numbers *stack);
+t_bool	is_double(int *numbers, int index);
+
 
 #endif

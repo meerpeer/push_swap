@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/03/09 10:21:53 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/03/09 10:21:54 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/09 10:21:53 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/20 13:32:53 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
+#include "../ft_printf/ft_printf.h"
+
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	n;
+	long long	i;
+	int			n;
 
 	i = 0;
 	n = 1;
@@ -32,6 +35,11 @@ int	ft_atoi(const char *str)
 	{
 		i = i * 10 + (*str - 48);
 		str++;
+	}
+	if (i > INT_MAX || i < INT_MIN)
+	{
+		ft_printf("Error\n");
+		exit (1);
 	}
 	return ((int)i * n);
 }
