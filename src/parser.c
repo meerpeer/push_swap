@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 13:38:03 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/21 14:07:23 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/21 16:43:28 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,11 @@ t_numbers	*parse_input(int argc, char **argv)
 	int			*numbers;
 
 	number_list = NULL;
-	numbers = ft_calloc(argc, sizeof(int));
+	numbers = ft_calloc(argc + 1, sizeof(int));
 	i = 0;
 	if (argc <= 1)
 		error_exit();
-	while (argc - i > 1)
+	while (argc - i >= 1)
 	{
 		if (!is_int(argv[i + 1]))
 			error_exit();
@@ -94,6 +94,6 @@ t_numbers	*parse_input(int argc, char **argv)
 	if (numbers)
 		number_list = create_linked_number_list(numbers);
 	free(numbers);
-	list_set_rank(number_list, argc - 1);
+	list_set_rank(number_list, argc);
 	return (number_list);
 }

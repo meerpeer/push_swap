@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/18 18:05:46 by merel         #+#    #+#                 */
-/*   Updated: 2022/07/21 13:59:24 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/21 16:37:10 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,19 @@ t_numbers	*lstnew_element(int number)
 	new_number->next = NULL;
 	new_number->rank = -1;
 	return (new_number);
+}
+
+int	lstsize(t_numbers *lst)
+{
+	int	i;
+
+	i = 0;
+	if (lst == NULL)
+		return (0);
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

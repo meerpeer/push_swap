@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 13:10:18 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/21 14:10:27 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/21 17:01:58 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ Returns TRUE and prints 'sa' or 'sb' if succesfull
 stack = stack to swap
 c     = stack name (only takes 'a' or 'b')
 */
-t_bool		swap(t_numbers **stack, char c);
+t_bool		swap(t_numbers **stack);
 t_bool		swap_both(t_numbers **stack_a, t_numbers **stack_b);
+t_bool		rotate(t_numbers **stack);
 
 #endif
