@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 13:10:18 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/21 11:00:25 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/21 14:10:27 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,36 @@ typedef enum e_bool
 
 t_numbers	*parse_input(int argc, char **argv);
 
-// list functions
-t_numbers	*new_element(int number);
-void		list_add_to_back(t_numbers **lst, t_numbers *new_number);
+// LIST FUNCTIONS
 
-// helper functions
+t_numbers	*lstnew_element(int number);
+void		list_add_to_back(t_numbers **lst, t_numbers *new_number);
+t_numbers	*lst_last(t_numbers *lst);
+void		lstadd_back(t_numbers **lst, t_numbers *new_number);
+void		lstadd_front(t_numbers **lst, t_numbers *new);
+
+
+// HELPER FUNCTIONS
+
 t_bool		is_int(char *str);
-t_bool		stack_is_ordered(t_numbers *stack);
+t_bool		is_sorted(t_numbers *stack);
 t_bool		is_double(int *numbers, int index);
 
 // small sort stack (up until 5)
+
+
+// OPERATIONS
+
+void		operation(char *op_name, t_numbers **stack_a, t_numbers **stack_b);
+/*
+Takes a stack and swaps the top 2 elements
+Will not do anything if there is only one element
+Returns TRUE and prints 'sa' or 'sb' if succesfull
+
+stack = stack to swap
+c     = stack name (only takes 'a' or 'b')
+*/
+t_bool		swap(t_numbers **stack, char c);
+t_bool		swap_both(t_numbers **stack_a, t_numbers **stack_b);
+
 #endif

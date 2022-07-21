@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/20 12:11:19 by merel         #+#    #+#                 */
-/*   Updated: 2022/07/21 11:01:06 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/21 11:57:17 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 t_bool	is_int(char *str)
 {
-	while (ft_isdigit(*str))
+	while (ft_isdigit(*str) || *str == '-')
 		str++;
 	if (*str)
 		return (FALSE);
 	return (TRUE);
 }
 
-t_bool	stack_is_ordered(t_numbers *stack)
+t_bool	is_sorted(t_numbers *stack)
 {
 	int	last_rank;
 

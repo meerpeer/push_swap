@@ -6,13 +6,13 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/18 18:05:46 by merel         #+#    #+#                 */
-/*   Updated: 2022/07/21 11:04:44 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/21 13:59:24 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_numbers	*lstlast(t_numbers *lst)
+t_numbers	*lst_last(t_numbers *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -21,7 +21,7 @@ t_numbers	*lstlast(t_numbers *lst)
 	return (lst);
 }
 
-void	list_add_to_back(t_numbers **lst, t_numbers *new_number)
+void	lstadd_back(t_numbers **lst, t_numbers *new_number)
 {
 	t_numbers	*last;
 
@@ -32,11 +32,17 @@ void	list_add_to_back(t_numbers **lst, t_numbers *new_number)
 		*lst = new_number;
 		return ;
 	}
-	last = lstlast(*lst);
+	last = lst_last(*lst);
 	last->next = new_number;
 }
 
-t_numbers	*new_element(int number)
+void	lstadd_front(t_numbers **lst, t_numbers *new)
+{
+	new->next = *lst;
+	*lst = new;
+}
+
+t_numbers	*lstnew_element(int number)
 {
 	t_numbers	*new_number;
 

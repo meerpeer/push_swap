@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 13:38:03 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/21 11:05:44 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/21 14:07:23 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ t_numbers	*create_linked_number_list(int *numbers)
 	while (numbers[i])
 	{
 		if (!number_list)
-			number_list = new_element(numbers[i]);
+			number_list = lstnew_element(numbers[i]);
 		else
-			list_add_to_back(&number_list, new_element(numbers[i]));
+			lstadd_back(&number_list, lstnew_element(numbers[i]));
 		i++;
 	}
 	return (number_list);
