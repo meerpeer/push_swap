@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 13:14:33 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/20 13:26:55 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   main.c                                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/15 13:14:33 by mevan-de      #+#    #+#                 */
+/*   Updated: 2022/07/21 11:05:06 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ check ranks in stack a
 	}
 */
 
-
 int	main(int argc, char **argv)
 {
 	t_numbers	*stack_a;
@@ -32,7 +31,7 @@ int	main(int argc, char **argv)
 
 	stack_a = parse_input(argc, argv);
 	stack_b = NULL;
-	if(stack_is_ordered(stack_a))
+	if (stack_is_ordered(stack_a))
 		return (0);
 	ft_printf("made it till here\n");
 	return (0);

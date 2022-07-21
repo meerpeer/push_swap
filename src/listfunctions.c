@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   listfunctions.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 18:05:46 by merel             #+#    #+#             */
-/*   Updated: 2022/07/20 12:23:42 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   listfunctions.c                                    :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/18 18:05:46 by merel         #+#    #+#                 */
+/*   Updated: 2022/07/21 11:04:44 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 t_numbers	*lstlast(t_numbers *lst)
 {
@@ -37,9 +36,6 @@ void	list_add_to_back(t_numbers **lst, t_numbers *new_number)
 	last->next = new_number;
 }
 
-
-// this is where it goes wrong. You're not actually storing the int, 
-// but you are storing the address, check how you did this in so_long.
 t_numbers	*new_element(int number)
 {
 	t_numbers	*new_number;
@@ -48,6 +44,5 @@ t_numbers	*new_element(int number)
 	new_number->number = number;
 	new_number->next = NULL;
 	new_number->rank = -1;
-
 	return (new_number);
 }

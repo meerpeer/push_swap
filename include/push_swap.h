@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 13:10:18 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/20 12:31:27 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   Push_Swap.h                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/15 13:10:18 by mevan-de      #+#    #+#                 */
+/*   Updated: 2022/07/21 11:00:25 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ t_numbers	*new_element(int number);
 void		list_add_to_back(t_numbers **lst, t_numbers *new_number);
 
 // helper functions
-t_bool	is_int(char *str);
-t_bool	stack_is_ordered(t_numbers *stack);
-t_bool	is_double(int *numbers, int index);
+t_bool		is_int(char *str);
+t_bool		stack_is_ordered(t_numbers *stack);
+t_bool		is_double(int *numbers, int index);
 
-
+// small sort stack (up until 5)
 #endif

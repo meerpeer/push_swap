@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   helperfunctions.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 12:11:19 by merel             #+#    #+#             */
-/*   Updated: 2022/07/20 13:07:42 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   helperfunctions.c                                  :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/20 12:11:19 by merel         #+#    #+#                 */
+/*   Updated: 2022/07/21 11:01:06 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ t_bool	is_int(char *str)
 t_bool	stack_is_ordered(t_numbers *stack)
 {
 	int	last_rank;
-	
+
 	last_rank = -1;
-	while(stack)
+	while (stack)
 	{
 		if (stack->rank < last_rank)
 			return (FALSE);
