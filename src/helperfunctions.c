@@ -1,16 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   helperfunctions.c                                  :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: merel <merel@student.42.fr>                  +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/20 12:11:19 by merel         #+#    #+#                 */
-/*   Updated: 2022/07/21 11:57:17 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   helperfunctions.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/20 12:11:19 by merel             #+#    #+#             */
+/*   Updated: 2022/07/22 12:07:38 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+int	find_lowest_index(t_numbers	*stack)
+{
+	int	i;
+	int	last_lowest_index;
+	int	last_lowest_rank;
+
+	i = 0;
+	last_lowest_rank = stack->rank;
+	last_lowest_index = i;
+	while (stack)
+	{
+		if(stack->rank < last_lowest_rank)
+		{
+			last_lowest_rank = stack->rank;
+			last_lowest_index = i;
+		}
+		stack = stack->next;
+		i++;
+	}
+	return (last_lowest_index);
+}
 
 t_bool	is_int(char *str)
 {

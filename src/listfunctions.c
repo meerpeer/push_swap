@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   listfunctions.c                                    :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: merel <merel@student.42.fr>                  +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/18 18:05:46 by merel         #+#    #+#                 */
-/*   Updated: 2022/07/21 16:37:10 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   listfunctions.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/18 18:05:46 by merel             #+#    #+#             */
+/*   Updated: 2022/07/22 13:06:39 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,21 @@ void	lstadd_back(t_numbers **lst, t_numbers *new_number)
 
 void	lstadd_front(t_numbers **lst, t_numbers *new)
 {
-	new->next = *lst;
+		ft_printf("hi\n");
+	if (lst)
+		new->next = *lst;
+	ft_printf("new next\n");
 	*lst = new;
 }
 
-t_numbers	*lstnew_element(int number)
+t_numbers	*lstnew_element(int number, int rank)
 {
 	t_numbers	*new_number;
 
 	new_number = ft_calloc(1, sizeof(struct s_numbers));
 	new_number->number = number;
 	new_number->next = NULL;
-	new_number->rank = -1;
+	new_number->rank = rank;
 	return (new_number);
 }
 

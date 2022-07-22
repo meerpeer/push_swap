@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   Push_Swap.h                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: merel <merel@student.42.fr>                  +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/15 13:10:18 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/21 17:01:58 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/15 13:10:18 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/22 13:13:02 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ t_numbers	*parse_input(int argc, char **argv);
 
 // LIST FUNCTIONS
 
-t_numbers	*lstnew_element(int number);
+t_numbers	*lstnew_element(int number, int rank);
 void		list_add_to_back(t_numbers **lst, t_numbers *new_number);
 t_numbers	*lst_last(t_numbers *lst);
 void		lstadd_back(t_numbers **lst, t_numbers *new_number);
 void		lstadd_front(t_numbers **lst, t_numbers *new);
+int			lstsize(t_numbers *lst);
 
 
 // HELPER FUNCTIONS
@@ -46,9 +47,10 @@ void		lstadd_front(t_numbers **lst, t_numbers *new);
 t_bool		is_int(char *str);
 t_bool		is_sorted(t_numbers *stack);
 t_bool		is_double(int *numbers, int index);
+int			find_lowest_index(t_numbers	*stack);
 
 // small sort stack (up until 5)
-
+void		try_smallsort(t_numbers **stack_a, t_numbers **stack_b);
 
 // OPERATIONS
 
@@ -64,5 +66,7 @@ c     = stack name (only takes 'a' or 'b')
 t_bool		swap(t_numbers **stack);
 t_bool		swap_both(t_numbers **stack_a, t_numbers **stack_b);
 t_bool		rotate(t_numbers **stack);
+t_bool		reverse_rotate(t_numbers **stack);
+t_bool		push(t_numbers **pop_stack, t_numbers **receive_stack);
 
 #endif

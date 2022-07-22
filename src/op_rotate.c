@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_push.c                                          :+:      :+:    :+:   */
+/*   op_rotate_solo.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 16:36:25 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/22 13:04:39 by merel            ###   ########.fr       */
+/*   Created: 2022/07/21 16:51:37 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/22 10:29:02 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	pop(t_numbers **top)
+t_bool	rotate(t_numbers **stack)
 {
-	t_numbers	*first;
+	t_numbers	*old_first;
 
-	ft_printf("trying to pop\n");
-
-	first = *top;
-	*top = (*top)->next;
-	free (first);
+	old_first = *stack;
+	lstadd_back(stack, *stack);
+	*stack = old_first->next;
+	old_first->next = NULL;
+	return (TRUE);
 }
 
-t_bool	push(t_numbers **pop_stack, t_numbers **receive_stack)
+t_bool	reverse_rotate(t_numbers **stack)
 {
-	t_numbers	*new;
+	t_numbers	*old_last;
+	t_numbers	*i_list;
 
-	if (!*pop_stack)
-		return (FALSE);
-	new = lstnew_element((*pop_stack)->number, (*pop_stack)->rank);
-	if(new)
-	{
-		ft_printf("new rank =%i\n", new->number);
-	}
-	lstadd_front(receive_stack, new);
-	pop(pop_stack);
+	old_last = lst_last(*stack);
+	lstadd_front(stack, old_last);
+	i_list = *stack;
+	while (i_list->next != old_last)
+		i_list = i_list->next;
+	i_list->next = 0;
 	return (TRUE);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: merel <merel@student.42.fr>                  +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/15 13:14:33 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/21 17:02:49 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/15 13:14:33 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/22 13:10:30 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,12 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (is_sorted(stack_a))
 		return (0);
-	
-	operation("ra", &stack_a, &stack_b);
-	while(stack_a)
-	{
-		ft_printf("number = %i\n", stack_a->number);
-		stack_a = stack_a->next;
-	}
+	try_smallsort(&stack_a, &stack_b);
+	// while (stack_a)
+	// {
+	// 	ft_printf("number = %i\n", stack_a->number);
+	// 	stack_a = stack_a->next;
+	// }
 	
 
 	return (0);

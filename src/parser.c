@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   parser.c                                           :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: merel <merel@student.42.fr>                  +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/15 13:38:03 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/21 16:43:28 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   parser.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/15 13:38:03 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/22 12:26:22 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ void	list_set_rank(t_numbers *lst, int total)
 	t_numbers	*temp_lst;
 	t_numbers	*current_lowest_element;
 
-	rank = 1;
+	rank = 0;
 	while (total)
 	{
 		temp_lst = lst;
-		while (temp_lst->rank > 0)
+		while (temp_lst->rank > -1)
 			temp_lst = temp_lst->next;
 		current_lowest_element = temp_lst;
 		temp_lst = temp_lst->next;
 		while (temp_lst)
 		{
-			if (temp_lst->rank <= 0
+			if (temp_lst->rank < 0
 				&& current_lowest_element->number > temp_lst->number)
 				current_lowest_element = temp_lst;
 			temp_lst = temp_lst->next;
@@ -56,9 +56,9 @@ t_numbers	*create_linked_number_list(int *numbers)
 	while (numbers[i])
 	{
 		if (!number_list)
-			number_list = lstnew_element(numbers[i]);
+			number_list = lstnew_element(numbers[i], -1);
 		else
-			lstadd_back(&number_list, lstnew_element(numbers[i]));
+			lstadd_back(&number_list, lstnew_element(numbers[i], -1));
 		i++;
 	}
 	return (number_list);
