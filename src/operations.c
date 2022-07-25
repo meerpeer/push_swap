@@ -6,14 +6,14 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 12:03:16 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/25 17:53:09 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 20:15:08 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 // maybe make it universal later?
-void	rotate_lowest_to_top(t_numbers **stack_a)
+void	rotate_lowest_to_top(t_stack **stack_a)
 {
 	int	total;
 	int	lowest;
@@ -36,7 +36,7 @@ void	rotate_lowest_to_top(t_numbers **stack_a)
 	//print_stack(*stack_a, "rotated lowest to top");
 }
 
-void	operation(char *op_name, t_numbers **stack_a, t_numbers **stack_b)
+void	operation(char *op_name, t_stack **stack_a, t_stack **stack_b)
 {
 	t_bool	op_succes;
 	int		op_name_len;

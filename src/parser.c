@@ -6,17 +6,17 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:38:03 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/22 12:26:22 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 20:15:08 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	list_set_rank(t_numbers *lst, int total)
+void	list_set_rank(t_stack *lst, int total)
 {
 	int			rank;
-	t_numbers	*temp_lst;
-	t_numbers	*current_lowest_element;
+	t_stack	*temp_lst;
+	t_stack	*current_lowest_element;
 
 	rank = 0;
 	while (total)
@@ -46,9 +46,9 @@ void	error_exit(void)
 	exit (1);
 }
 
-t_numbers	*create_linked_number_list(int *numbers)
+t_stack	*create_linked_number_list(int *numbers)
 {
-	t_numbers	*number_list;
+	t_stack	*number_list;
 	int			i;
 
 	i = 0;
@@ -71,10 +71,10 @@ while (numbers[i])
 		i++;
 	}
 */
-t_numbers	*parse_input(int argc, char **argv)
+t_stack	*parse_input(int argc, char **argv)
 {
 	int			i;
-	t_numbers	*number_list;
+	t_stack	*number_list;
 	int			*numbers;
 
 	number_list = NULL;

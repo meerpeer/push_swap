@@ -6,13 +6,13 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 11:00:34 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/25 17:54:37 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 20:15:08 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	sort_2(t_numbers **stack_a)
+void	sort_2(t_stack **stack_a)
 {
 	if (is_sorted(*stack_a))
 		exit (0);
@@ -20,7 +20,7 @@ void	sort_2(t_numbers **stack_a)
 		operation("sa", stack_a, NULL);
 }
 
-void	sort_3(t_numbers **stack_a)
+void	sort_3(t_stack **stack_a)
 {
 	int			a;
 	int			b;
@@ -54,7 +54,7 @@ void	sort_3(t_numbers **stack_a)
 	}
 }
 
-void	sort_4(t_numbers **stack_a, t_numbers **stack_b)
+void	sort_4(t_stack **stack_a, t_stack **stack_b)
 {
 	rotate_lowest_to_top(stack_a);
 	operation("pb", stack_a, stack_b);
@@ -63,7 +63,7 @@ void	sort_4(t_numbers **stack_a, t_numbers **stack_b)
 	return ;
 }
 
-void	sort_5(t_numbers **stack_a, t_numbers **stack_b)
+void	sort_5(t_stack **stack_a, t_stack **stack_b)
 {
 	rotate_lowest_to_top(stack_a);
 	operation("pb", stack_a, stack_b);
@@ -71,7 +71,7 @@ void	sort_5(t_numbers **stack_a, t_numbers **stack_b)
 	operation("pa", stack_a, stack_b);
 }
 
-void	try_smallsort(t_numbers **stack_a, t_numbers **stack_b)
+void	try_smallsort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	stack_a_size;
 

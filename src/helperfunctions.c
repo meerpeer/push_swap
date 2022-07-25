@@ -6,13 +6,29 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 12:11:19 by merel             #+#    #+#             */
-/*   Updated: 2022/07/22 12:07:38 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 20:32:53 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	find_lowest_index(t_numbers	*stack)
+int	get_lowest_rank(t_stack *stack)
+{
+	int	last_highest;
+
+	if (!stack)
+		return ;
+	last_highest = stack->rank;
+	while (stack)
+	{
+		if (stack->rank > last_highest)
+			last_highest = stack->rank;
+		stack = stack->next;
+	}
+	return (last_highest);
+}
+
+int	find_lowest_index(t_stack	*stack)
 {
 	int	i;
 	int	last_lowest_index;
@@ -43,7 +59,7 @@ t_bool	is_int(char *str)
 	return (TRUE);
 }
 
-t_bool	is_sorted(t_numbers *stack)
+t_bool	is_sorted(t_stack *stack)
 {
 	int	last_rank;
 

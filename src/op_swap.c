@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   op_swap.c                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/21 11:24:12 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/21 16:53:41 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   op_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/21 11:24:12 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/25 20:15:08 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 
-t_bool	swap(t_numbers **stack)
+t_bool	swap(t_stack **stack)
 {
-	t_numbers	*third_element;
-	t_numbers	*first_element;
+	t_stack	*third_element;
+	t_stack	*first_element;
 
 	first_element = *stack;
 	if (!first_element->next)
@@ -28,7 +28,7 @@ t_bool	swap(t_numbers **stack)
 	return (TRUE);
 }
 
-t_bool	swap_both(t_numbers **stack_a, t_numbers **stack_b)
+t_bool	swap_both(t_stack **stack_a, t_stack **stack_b)
 {
 	if (swap(stack_a))
 	{

@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_push.c                                          :+:      :+:    :+:   */
+/*   bigsort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 16:36:25 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/25 20:15:08 by merel            ###   ########.fr       */
+/*   Created: 2022/07/25 20:12:40 by merel             #+#    #+#             */
+/*   Updated: 2022/07/25 20:34:46 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_bool	push(t_stack **source_stack, t_stack **receive_stack)
+void	pre_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*new_source_top;
+	int	total;
+	int	lowest_rank;
+	int	i;
+	
+	total = lstsize(stack_a);
+	i = 0;
+	
+	while (lstsize(stack_a) > 5)
+	{
+		lowest_rank = get_lowest_rank(stack_a);
+		i = lowest_rank;
+		while (i < (total - lowest_rank) / 2)
+		{
+			
+		}
+	}
+	try_smallsort(stack_a, stack_b);
+}
 
-	if (!*source_stack)
-		return (FALSE);
-	new_source_top = (*source_stack)->next;
-	lstadd_front(receive_stack, *source_stack);
-	*source_stack = new_source_top;
-	//print_stack(*receive_stack, "pushed to stack");
-	return (TRUE);
+void	try_bigsort(t_stack **stack_a, t_stack **stack_b)
+{
+	pre_sort(stack_a, stack_b);
+	
 }

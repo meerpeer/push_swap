@@ -6,13 +6,13 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 18:05:46 by merel             #+#    #+#             */
-/*   Updated: 2022/07/25 17:35:01 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 20:15:08 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_numbers	*lst_last(t_numbers *lst)
+t_stack	*lst_last(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -21,9 +21,9 @@ t_numbers	*lst_last(t_numbers *lst)
 	return (lst);
 }
 
-void	lstadd_back(t_numbers **lst, t_numbers *new_number)
+void	lstadd_back(t_stack **lst, t_stack *new_number)
 {
-	t_numbers	*last;
+	t_stack	*last;
 
 	if (!lst)
 		return ;
@@ -36,15 +36,15 @@ void	lstadd_back(t_numbers **lst, t_numbers *new_number)
 	last->next = new_number;
 }
 
-void	lstadd_front(t_numbers **lst, t_numbers *new)
+void	lstadd_front(t_stack **lst, t_stack *new)
 {
 	new->next = *lst;
 	*lst = new;
 }
 
-t_numbers	*lstnew_element(int number, int rank)
+t_stack	*lstnew_element(int number, int rank)
 {
-	t_numbers	*new_number;
+	t_stack	*new_number;
 
 	new_number = ft_calloc(1, sizeof(struct s_numbers));
 	new_number->number = number;
@@ -53,7 +53,7 @@ t_numbers	*lstnew_element(int number, int rank)
 	return (new_number);
 }
 
-int	lstsize(t_numbers *lst)
+int	lstsize(t_stack *lst)
 {
 	int	i;
 
