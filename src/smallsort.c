@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 11:00:34 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/25 21:45:08 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 22:29:39 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	try_smallsort(t_stack **stack_a, t_stack **stack_b)
 		sort_4(stack_a, stack_b);
 	else if (stack_a_size == 5)
 		sort_5(stack_a, stack_b);
-//	if (is_sorted(*stack_a) && !*stack_b)
-//		exit (0);
+	if (is_sorted(*stack_a) && !*stack_b)
+		exit (0);
 	//ft_printf("stack size = %i\n", stack_a_size);
 }

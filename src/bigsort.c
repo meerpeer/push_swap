@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:12:40 by merel             #+#    #+#             */
-/*   Updated: 2022/07/25 21:45:41 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 22:33:53 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	pre_sort(t_stack **stack_a, t_stack **stack_b)
 	{
 		max_range = (total - get_lowest_rank(*stack_a)) / 2;
 		stack_iter = *stack_a;
-		while (stack_iter)
+		while (stack_iter && lstsize(*stack_a) > 5)
 		{
 			if (stack_iter->rank < max_range)
 			{
