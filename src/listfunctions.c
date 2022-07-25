@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 18:05:46 by merel             #+#    #+#             */
-/*   Updated: 2022/07/25 17:15:27 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 17:35:01 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ void	lstadd_back(t_numbers **lst, t_numbers *new_number)
 
 void	lstadd_front(t_numbers **lst, t_numbers *new)
 {
-	if (*lst != NULL)
-		new->next = *lst;
+	new->next = *lst;
 	*lst = new;
 }
 
