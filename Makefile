@@ -5,7 +5,7 @@ CC = gcc
 HEADERFILES = include/push_swap.h
 
 SRC_FILES = main.c parser.c listfunctions.c helperfunctions.c smallsort.c\
-			op_swap.c op_rotate.c op_push.c operations.c\
+			op_swap.c op_rotate.c op_push.c operations.c bigsort.c\
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 OBJS = $(addprefix obj/, $(OBJ_FILES))
