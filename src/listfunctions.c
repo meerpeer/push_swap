@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 18:05:46 by merel             #+#    #+#             */
-/*   Updated: 2022/07/22 13:06:39 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 17:15:27 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,8 @@ void	lstadd_back(t_numbers **lst, t_numbers *new_number)
 
 void	lstadd_front(t_numbers **lst, t_numbers *new)
 {
-		ft_printf("hi\n");
-	if (lst)
+	if (*lst != NULL)
 		new->next = *lst;
-	ft_printf("new next\n");
 	*lst = new;
 }
 

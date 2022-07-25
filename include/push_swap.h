@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:10:18 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/22 13:13:02 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 17:21:51 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ t_numbers	*lst_last(t_numbers *lst);
 void		lstadd_back(t_numbers **lst, t_numbers *new_number);
 void		lstadd_front(t_numbers **lst, t_numbers *new);
 int			lstsize(t_numbers *lst);
+
+// MAYBE REMOVE?
+void	sort_4(t_numbers **stack_a, t_numbers **stack_b);
+void	print_stack(t_numbers *stack, char *stack_name);
 
 
 // HELPER FUNCTIONS

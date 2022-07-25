@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 11:00:34 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/22 13:09:06 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 17:30:40 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,23 @@ void	sort_3(t_numbers **stack_a)
 	c = stack_a[0]->next->next->rank;
 	if (is_sorted(stack_a[0]))
 		exit (0);
-	if (a == 1 && b == 0 && c == 2)
+	if //(a == 1 && b == 0 && c == 2)
+	(a > b && a < c && b < c)
 		operation("sa", stack_a, NULL);
-	if (a == 1 && b == 2 && c == 0)
+	if (a < b && a > c && b > c)
+	//(a == 1 && b == 2 && c == 0)
 		operation("rra", stack_a, NULL);
-	if (a == 2 && b == 0 && c == 1)
+	if (a > b && a > c && b < c)
+	//(a == 2 && b == 0 && c == 1)
 		operation("ra", stack_a, NULL);
-	if (a == 0 && b == 2 && c == 1)
+	if (a < b && a < c && b > c)
+		//a == 0 && b == 2 && c == 1)
 	{	
 		operation("sa", stack_a, NULL);
 		operation("ra", stack_a, NULL);
 	}
-		if (a == 2 && b == 1 && c == 0)
+	if (a > b && a > c && b > c)
+		//(a == 2 && b == 1 && c == 0)
 	{	
 		operation("sa", stack_a, NULL);
 		operation("rra", stack_a, NULL);
@@ -53,8 +58,7 @@ void	sort_4(t_numbers **stack_a, t_numbers **stack_b)
 {
 	int	total;
 	int	lowest;
-	
-	stack_b = NULL;
+
 	total = lstsize(*stack_a);
 	if (total != 4)
 		return ;
@@ -73,7 +77,9 @@ void	sort_4(t_numbers **stack_a, t_numbers **stack_b)
 		}
 	}
 	operation("pb", stack_a, stack_b);
+	print_stack(*stack_a, "A before sort 3");
 	sort_3(stack_a);
+	print_stack(*stack_a, "A after sort 3");
 	operation("pa", stack_a, stack_b);
 	return ;
 }

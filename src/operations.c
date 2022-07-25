@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 12:03:16 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/22 13:12:17 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 16:25:46 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ void	operation(char *op_name, t_numbers **stack_a, t_numbers **stack_b)
 		op_succes = reverse_rotate(stack_a);
 	else if (ft_strncmp(op_name, "rrb", op_name_len) == 0)
 		op_succes = reverse_rotate(stack_b);
+	//pb (push b): Take the first element at the top of a and put it at the top of b.
 	else if (ft_strncmp(op_name, "pb", op_name_len) == 0)
-		op_succes = push(stack_b, stack_a);
-	else if (ft_strncmp(op_name, "pa", op_name_len) == 0)
 		op_succes = push(stack_a, stack_b);
+	else if (ft_strncmp(op_name, "pa", op_name_len) == 0)
+		op_succes = push(stack_b, stack_a);
 	if (op_succes)
 		ft_printf("%s\n", op_name);
 }
