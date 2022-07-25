@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:10:18 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/25 20:33:19 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 21:08:47 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,14 @@ int			get_lowest_rank(t_stack *stack);
 // small sort stack (up until 5)
 void		try_smallsort(t_stack **stack_a, t_stack **stack_b);
 
+void		try_bigsort(t_stack **stack_a, t_stack **stack_b);
+
 // OPERATIONS
 
 void		operation(char *op_name, t_stack **stack_a, t_stack **stack_b);
 void		rotate_lowest_to_top(t_stack **stack_a);
+void		rotate_element_to_top(t_stack **stack, int index, char stack_letter);
+
 /*
 Takes a stack and swaps the top 2 elements
 Will not do anything if there is only one element

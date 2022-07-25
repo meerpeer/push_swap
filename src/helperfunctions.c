@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 12:11:19 by merel             #+#    #+#             */
-/*   Updated: 2022/07/25 20:32:53 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 21:16:10 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 int	get_lowest_rank(t_stack *stack)
 {
-	int	last_highest;
+	int	last_lowest;
 
 	if (!stack)
-		return ;
-	last_highest = stack->rank;
+		return (-1);
+	last_lowest = stack->rank;
 	while (stack)
 	{
-		if (stack->rank > last_highest)
-			last_highest = stack->rank;
+		if (stack->rank < last_lowest)
+			last_lowest = stack->rank;
 		stack = stack->next;
 	}
-	return (last_highest);
+	return (last_lowest);
 }
 
 int	find_lowest_index(t_stack	*stack)

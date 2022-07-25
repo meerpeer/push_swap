@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:14:33 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/25 20:15:08 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/25 21:37:16 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ int	main(int argc, char **argv)
 		return (0);
 	//sort_4(&stack_a, &stack_b);
 	try_smallsort(&stack_a, &stack_b);
+	try_bigsort(&stack_a, &stack_b);
 	print_stack(stack_a, "A");
-	
-
+	print_stack(stack_b, "B");
 	return (0);
 }
