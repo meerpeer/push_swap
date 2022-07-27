@@ -6,24 +6,11 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:12:40 by merel             #+#    #+#             */
-/*   Updated: 2022/07/27 10:42:51 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 14:51:11 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-int	get_rank_index(t_stack *stack, int rank)
-{
-	int	i;
-
-	i = 0;
-	while (stack->rank != rank && stack)
-	{
-		stack = stack->next;
-		i++;
-	}
-	return (i);
-}
 
 void	pre_sort(t_stack **stack_a, t_stack **stack_b)
 {
@@ -53,8 +40,14 @@ void	pre_sort(t_stack **stack_a, t_stack **stack_b)
 	return ;
 }
 
-void	try_bigsort(t_stack **stack_a, t_stack **stack_b)
+void	try_bigsort(t_stack **stack_a, t_stack **stack_b, t_op_count *op_count)
 {
 	pre_sort(stack_a, stack_b);
+	if (is_sorted(*stack_a) && !*stack_b)
+		exit (0);
+	set_lowest_nr_moves(stack_a, stack_b, op_count);
+	ft_printf("lowest nr of moves total = %i\n", op_count->total);
+	// set/find lowest nr of moves
+	// do those moves
 	return ;
 }

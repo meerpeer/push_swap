@@ -6,11 +6,31 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 12:11:19 by merel             #+#    #+#             */
-/*   Updated: 2022/07/25 21:16:10 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 11:45:56 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+int	ft_abs(int i)
+{
+	if (i < 0)
+		return (i * -1);
+	return (i);
+}
+
+int	get_rank_index(t_stack *stack, int rank)
+{
+	int	i;
+
+	i = 0;
+	while (stack->rank != rank && stack)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (i);
+}
 
 int	get_lowest_rank(t_stack *stack)
 {

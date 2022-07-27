@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:51:37 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/25 20:15:08 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 14:37:44 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,41 @@ t_bool	reverse_rotate(t_stack **stack)
 		i_list = i_list->next;
 	i_list->next = 0;
 	return (TRUE);
+}
+
+int	get_rotate_count(t_stack *stack, int index)
+{
+	int	total;
+
+	total = lstsize(stack);
+	if (index < (total / 2))
+		return index;
+	else
+		return (-total  + index);
+}
+
+void	rotate_element_to_top(t_stack **stack, int index, char stack_letter)
+{
+	int	total;
+
+	total = lstsize(*stack);
+	while (index > 0 && index < total)
+	{
+		if (index > (total / 2))
+		{
+			if (stack_letter == 'a' || stack_letter == 'A')
+				operation("rra", stack, NULL);
+			else if (stack_letter == 'b' || stack_letter == 'B')
+				operation("rrb", NULL, stack);
+			index++;
+		}
+		else
+		{
+			if (stack_letter == 'a' || stack_letter == 'A')
+				operation("ra", stack, NULL);
+			else if (stack_letter == 'b' || stack_letter == 'B')
+				operation("rb", NULL, stack);
+			index--;
+		}
+	}
 }
