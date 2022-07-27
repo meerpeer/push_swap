@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:12:40 by merel             #+#    #+#             */
-/*   Updated: 2022/07/25 22:33:53 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 10:42:51 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	pre_sort(t_stack **stack_a, t_stack **stack_b)
 	total = lstsize(*stack_a);
 	while (lstsize(*stack_a) > 5)
 	{
-		max_range = (total - get_lowest_rank(*stack_a)) / 2;
+		max_range = total - ((total - get_lowest_rank(*stack_a)) / 2);
 		stack_iter = *stack_a;
 		while (stack_iter && lstsize(*stack_a) > 5)
 		{
@@ -47,7 +47,6 @@ void	pre_sort(t_stack **stack_a, t_stack **stack_b)
 			}
 			else
 				stack_iter = stack_iter->next;
-			//ft_printf("next\n");
 		}
 	}
 	try_smallsort(stack_a, stack_b);

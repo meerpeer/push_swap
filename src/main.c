@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:14:33 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/25 22:28:25 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 10:19:22 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ check ranks in stack a
 
 void	print_stack(t_stack *stack, char *stack_name)
 {
+	//if(stack == NULL)
+	//	return ;
 	ft_printf("\nPrinting: %s\n", stack_name);
 	ft_printf("------------\n");
 	while(stack)
@@ -38,6 +40,7 @@ void	print_stack(t_stack *stack, char *stack_name)
 		ft_printf("number = %i\n", stack->number);
 		stack = stack->next;
 	}
+	ft_printf("------------\n");
 }
 
 int	main(int argc, char **argv)
