@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:12:40 by merel             #+#    #+#             */
-/*   Updated: 2022/07/27 17:16:22 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 18:37:07 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,20 @@ void	try_bigsort(t_stack **stack_a, t_stack **stack_b, t_moves *moves)
 		set_lowest_nr_moves(stack_a, stack_b, moves);
 		do_moves(stack_a, stack_b, moves);
 		operation("pa", stack_a, stack_b);
+		//print_stack(*stack_a, "A");
+		//print_stack(*stack_b, "B");
 	}
+				// set_lowest_nr_moves(stack_a, stack_b, moves);
+				// print_stack(*stack_a, "A");
+				// print_stack(*stack_b, "b");
+				// operation("rr", stack_a, stack_b);
+				// print_stack(*stack_a, "A");
+				// print_stack(*stack_b, "b");
 	if (is_sorted(*stack_a))
-		exit (0);
+		ft_printf("sorted\n");
+	//	exit (0);
+//	print_stack(*stack_a, "A");
+//	ft_printf("rotating to top = %i\n", get_rank_index(*stack_a, 0));
 	rotate_element_to_top(stack_a, get_rank_index(*stack_a, 0), 'a');
 	return ;
 }

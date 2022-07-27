@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:51:37 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/27 15:41:04 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 18:45:51 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,13 @@ void	rotate_element_to_top(t_stack **stack, int index, char stack_letter)
 			if (stack_letter == 'a' || stack_letter == 'A')
 				operation("ra", stack, NULL);
 			else if (stack_letter == 'b' || stack_letter == 'B')
+			{
+			//	ft_printf("got it\n");
 				operation("rb", NULL, stack);
+			}
 			index--;
 		}
 	}
 }
+
+

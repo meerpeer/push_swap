@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:14:33 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/27 15:07:45 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 17:42:10 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,8 @@ t_moves	init_moves(void)
 	t_moves moves;
 
 	moves.ra = 0;
-	//moves.rra = 0;
 	moves.rb = 0;
-	//moves.rrb = 0;
 	moves.rr = 0;
-	//moves.rrr = 0;
 	moves.total = 0;
 	return (moves);
 }
@@ -72,6 +69,7 @@ int	main(int argc, char **argv)
 		return (0);
 	try_smallsort(&stack_a, &stack_b);
 	try_bigsort(&stack_a, &stack_b, &moves);
+
 	//print_stack(stack_a, "A");
 //	print_stack(stack_b, "B");
 	return (0);

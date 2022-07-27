@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 12:11:19 by merel             #+#    #+#             */
-/*   Updated: 2022/07/27 11:45:56 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 17:33:33 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,14 @@ int	get_rank_index(t_stack *stack, int rank)
 	int	i;
 
 	i = 0;
-	while (stack->rank != rank && stack)
+	while (stack)
 	{
+		if (stack->rank == rank)
+			return (i);
 		stack = stack->next;
 		i++;
 	}
+	ft_printf("could not find rank\n");
 	return (i);
 }
 
