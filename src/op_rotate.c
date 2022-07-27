@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:51:37 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/27 14:37:44 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 15:41:04 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,11 @@ int	get_rotate_count(t_stack *stack, int index)
 
 	total = lstsize(stack);
 	if (index < (total / 2))
+	{
+		//ft_printf("index = %i\n", index);
 		return index;
-	else
+	}
+	//ft_printf("-total + index = %i\n", (-total  + index));
 		return (-total  + index);
 }
 

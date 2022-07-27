@@ -6,11 +6,40 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:12:40 by merel             #+#    #+#             */
-/*   Updated: 2022/07/27 14:51:11 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 17:16:22 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	do_x_move(t_stack **stack_a, t_stack **stack_b, char *op_name, int x)
+{
+	int	adjust;
+
+	adjust = x / ft_abs(x);
+	while (x)
+	{
+		operation(op_name, stack_a, stack_b);
+		x -= adjust;
+	}
+}
+
+void	do_moves(t_stack **stack_a, t_stack **stack_b, t_moves *moves)
+{
+	if (moves->rr > 0)
+		do_x_move(stack_a, stack_b, "rr", moves->rr);
+	else if (moves->rr < 0)
+		do_x_move(stack_a, stack_b, "rrr", moves->rr);
+	if (moves->ra > 0)
+		do_x_move(stack_a, stack_b, "ra", moves->ra);
+	else if (moves->ra < 0)
+		do_x_move(stack_a, stack_b, "rra", moves->ra);
+	if (moves->rb > 0)
+		do_x_move(stack_a, stack_b, "rb", moves->rb);
+	else if (moves->rb < 0)
+		do_x_move(stack_a, stack_b, "rrb", moves->rb);
+	*moves = init_moves();
+}
 
 void	pre_sort(t_stack **stack_a, t_stack **stack_b)
 {
@@ -40,14 +69,19 @@ void	pre_sort(t_stack **stack_a, t_stack **stack_b)
 	return ;
 }
 
-void	try_bigsort(t_stack **stack_a, t_stack **stack_b, t_op_count *op_count)
+void	try_bigsort(t_stack **stack_a, t_stack **stack_b, t_moves *moves)
 {
 	pre_sort(stack_a, stack_b);
 	if (is_sorted(*stack_a) && !*stack_b)
 		exit (0);
-	set_lowest_nr_moves(stack_a, stack_b, op_count);
-	ft_printf("lowest nr of moves total = %i\n", op_count->total);
-	// set/find lowest nr of moves
-	// do those moves
+	while (*stack_b)
+	{
+		set_lowest_nr_moves(stack_a, stack_b, moves);
+		do_moves(stack_a, stack_b, moves);
+		operation("pa", stack_a, stack_b);
+	}
+	if (is_sorted(*stack_a))
+		exit (0);
+	rotate_element_to_top(stack_a, get_rank_index(*stack_a, 0), 'a');
 	return ;
 }

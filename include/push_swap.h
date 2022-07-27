@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:10:18 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/27 14:50:03 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 15:07:45 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ typedef enum e_bool
 	TRUE = 1
 }			t_bool;
 
-typedef struct s_op_count
+typedef struct s_moves
 {
 	int		ra;
 	int		rb;
 	int		rr;
 	int		total;
-}					t_op_count;
+}					t_moves;
 
 // parsing
 t_stack		*parse_input(int argc, char **argv);
@@ -66,15 +66,15 @@ int		get_rotate_count(t_stack *stack, int index);
 int		ft_abs(int i);
 
 
-t_op_count	init_operation_count(void);
+t_moves	init_moves(void);
 
 // small sort stack (up until 5)
 void	try_smallsort(t_stack **stack_a, t_stack **stack_b);
 
 // big sort
-void	try_bigsort(t_stack **stack_a, t_stack **stack_b, t_op_count *op_count);
+void	try_bigsort(t_stack **stack_a, t_stack **stack_b, t_moves *moves);
 void	set_lowest_nr_moves(t_stack **stack_a, t_stack **stack_b,
-			t_op_count *op_count);
+			t_moves *moves);
 
 // OPERATIONS
 

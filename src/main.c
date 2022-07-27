@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:14:33 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/27 14:37:00 by merel            ###   ########.fr       */
+/*   Updated: 2022/07/27 15:07:45 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,34 +44,34 @@ void	print_stack(t_stack *stack, char *stack_name)
 }
 
 
-t_op_count	init_operation_count(void)
+t_moves	init_moves(void)
 {
-	t_op_count op_count;
+	t_moves moves;
 
-	op_count.ra = 0;
-	//op_count.rra = 0;
-	op_count.rb = 0;
-	//op_count.rrb = 0;
-	op_count.rr = 0;
-	//op_count.rrr = 0;
-	op_count.total = 0;
-	return (op_count);
+	moves.ra = 0;
+	//moves.rra = 0;
+	moves.rb = 0;
+	//moves.rrb = 0;
+	moves.rr = 0;
+	//moves.rrr = 0;
+	moves.total = 0;
+	return (moves);
 }
 
 int	main(int argc, char **argv)
 {
 	t_stack		*stack_a;
 	t_stack		*stack_b;
-	t_op_count	op_count;
+	t_moves	moves;
 
 	argc -= 1;
 	stack_a = parse_input(argc, argv);
 	stack_b = NULL;
-	op_count = init_operation_count();
+	moves = init_moves();
 	if (is_sorted(stack_a))
 		return (0);
 	try_smallsort(&stack_a, &stack_b);
-	try_bigsort(&stack_a, &stack_b, &op_count);
+	try_bigsort(&stack_a, &stack_b, &moves);
 	//print_stack(stack_a, "A");
 //	print_stack(stack_b, "B");
 	return (0);
