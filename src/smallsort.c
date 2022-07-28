@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   smallsort.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 11:00:34 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/25 22:50:32 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   smallsort.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/21 11:00:34 by mevan-de      #+#    #+#                 */
+/*   Updated: 2022/07/28 13:37:57 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,18 @@ void	sort_3(t_stack **stack_a)
 	a = stack_a[0]->rank;
 	b = stack_a[0]->next->rank;
 	c = stack_a[0]->next->next->rank;
-	if //(a == 1 && b == 0 && c == 2)
-	(a > b && a < c && b < c)
+	if (a > b && a < c && b < c)
 		operation("sa", stack_a, NULL);
-	if (a < b && a > c && b > c)
-	//(a == 1 && b == 2 && c == 0)
+	else if (a < b && a > c && b > c)
 		operation("rra", stack_a, NULL);
-	if (a > b && a > c && b < c)
-	//(a == 2 && b == 0 && c == 1)
+	else if (a > b && a > c && b < c)
 		operation("ra", stack_a, NULL);
-	if (a < b && a < c && b > c)
-		//a == 0 && b == 2 && c == 1)
+	else if (a < b && a < c && b > c)
 	{	
 		operation("sa", stack_a, NULL);
 		operation("ra", stack_a, NULL);
 	}
-	if (a > b && a > c && b > c)
-		//(a == 2 && b == 1 && c == 0)
+	else if (a > b && a > c && b > c)
 	{	
 		operation("sa", stack_a, NULL);
 		operation("rra", stack_a, NULL);
@@ -90,5 +85,4 @@ void	try_smallsort(t_stack **stack_a, t_stack **stack_b)
 		sort_5(stack_a, stack_b);
 	if (is_sorted(*stack_a) && !*stack_b)
 		exit (0);
-	//ft_printf("stack size = %i\n", stack_a_size);
 }

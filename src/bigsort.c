@@ -6,11 +6,22 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/25 20:12:40 by merel         #+#    #+#                 */
-/*   Updated: 2022/07/28 12:43:28 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/28 13:41:03 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+t_moves	init_moves(void)
+{
+	t_moves	moves;
+
+	moves.ra = 0;
+	moves.rb = 0;
+	moves.rr = 0;
+	moves.total = 0;
+	return (moves);
+}
 
 void	do_x_move(t_stack **stack_a, t_stack **stack_b, char *op_name, int x)
 {
@@ -69,7 +80,7 @@ void	pre_sort(t_stack **stack_a, t_stack **stack_b)
 	return ;
 }
 
-void	try_bigsort(t_stack **stack_a, t_stack **stack_b, t_moves *moves)
+void	big_sort(t_stack **stack_a, t_stack **stack_b, t_moves *moves)
 {
 	pre_sort(stack_a, stack_b);
 	if (is_sorted(*stack_a) && !*stack_b)

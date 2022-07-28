@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 13:10:18 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/28 12:35:46 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/28 13:47:33 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int		get_lowest_rank(t_stack *stack);
 int		get_rank_index(t_stack *stack, int rank);
 int		get_rotate_count(t_stack *stack, int index);
 int		ft_abs(int i);
+void	error_exit(void);
 
 
 t_moves	init_moves(void);
@@ -72,7 +73,7 @@ t_moves	init_moves(void);
 void	try_smallsort(t_stack **stack_a, t_stack **stack_b);
 
 // big sort
-void	try_bigsort(t_stack **stack_a, t_stack **stack_b, t_moves *moves);
+void	big_sort(t_stack **stack_a, t_stack **stack_b, t_moves *moves);
 void	set_lowest_nr_moves(t_stack **stack_a, t_stack **stack_b,
 			t_moves *moves);
 

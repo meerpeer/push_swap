@@ -6,11 +6,47 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/21 12:03:16 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/28 12:42:55 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/28 13:40:08 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+int	get_rotate_count(t_stack *stack, int index)
+{
+	int	total;
+
+	total = lstsize(stack);
+	if (index < (total / 2))
+		return (index);
+	return (-total + index);
+}
+
+void	rotate_element_to_top(t_stack **stack, int index, char stack_letter)
+{
+	int	total;
+
+	total = lstsize(*stack);
+	while (index > 0 && index < total)
+	{
+		if (index > (total / 2))
+		{
+			if (stack_letter == 'a' || stack_letter == 'A')
+				operation("rra", stack, NULL);
+			else if (stack_letter == 'b' || stack_letter == 'B')
+				operation("rrb", NULL, stack);
+			index++;
+		}
+		else
+		{
+			if (stack_letter == 'a' || stack_letter == 'A')
+				operation("ra", stack, NULL);
+			else if (stack_letter == 'b' || stack_letter == 'B')
+				operation("rb", NULL, stack);
+			index--;
+		}
+	}
+}
 
 void	operation(char *op_name, t_stack **stack_a, t_stack **stack_b)
 {
@@ -33,7 +69,4 @@ void	operation(char *op_name, t_stack **stack_a, t_stack **stack_b)
 		op_succes = rotation_operation(stack_a, stack_b, op_name);
 	if (op_succes)
 		ft_printf("%s\n", op_name);
-
-	//ft_printf("operation tried = %s\n", op_name);
-	//ft_printf("comp = %i\n", ft_strncmp(op_name, "rrr", op_name_len));
 }

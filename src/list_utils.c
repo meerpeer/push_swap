@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   helperfunctions.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 12:11:19 by merel             #+#    #+#             */
-/*   Updated: 2022/07/27 17:33:33 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   list_utils.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/28 13:34:26 by mevan-de      #+#    #+#                 */
+/*   Updated: 2022/07/28 13:35:29 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-int	ft_abs(int i)
-{
-	if (i < 0)
-		return (i * -1);
-	return (i);
-}
 
 int	get_rank_index(t_stack *stack, int rank)
 {
@@ -31,7 +24,6 @@ int	get_rank_index(t_stack *stack, int rank)
 		stack = stack->next;
 		i++;
 	}
-	ft_printf("could not find rank\n");
 	return (i);
 }
 
@@ -62,7 +54,7 @@ int	find_lowest_index(t_stack	*stack)
 	last_lowest_index = i;
 	while (stack)
 	{
-		if(stack->rank < last_lowest_rank)
+		if (stack->rank < last_lowest_rank)
 		{
 			last_lowest_rank = stack->rank;
 			last_lowest_index = i;
@@ -71,15 +63,6 @@ int	find_lowest_index(t_stack	*stack)
 		i++;
 	}
 	return (last_lowest_index);
-}
-
-t_bool	is_int(char *str)
-{
-	while (ft_isdigit(*str) || *str == '-')
-		str++;
-	if (*str)
-		return (FALSE);
-	return (TRUE);
 }
 
 t_bool	is_sorted(t_stack *stack)
@@ -95,18 +78,4 @@ t_bool	is_sorted(t_stack *stack)
 		stack = stack->next;
 	}
 	return (TRUE);
-}
-
-t_bool	is_double(int *numbers, int index)
-{
-	int	i;
-
-	i = 0;
-	while (i < index)
-	{
-		if (numbers[i] == numbers[index])
-			return (TRUE);
-		i++;
-	}
-	return (FALSE);
 }

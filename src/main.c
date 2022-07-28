@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 13:14:33 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/27 17:42:10 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   main.c                                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/15 13:14:33 by mevan-de      #+#    #+#                 */
+/*   Updated: 2022/07/28 13:39:44 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,31 +29,10 @@ check ranks in stack a
 	}
 */
 
-void	print_stack(t_stack *stack, char *stack_name)
-{
-	//if(stack == NULL)
-	//	return ;
-	ft_printf("\nPrinting: %s\n", stack_name);
-	ft_printf("------------\n");
-	while(stack)
-	{
-		ft_printf("number = %i\n", stack->number);
-		stack = stack->next;
-	}
-	ft_printf("------------\n");
-}
 
 
-t_moves	init_moves(void)
-{
-	t_moves moves;
 
-	moves.ra = 0;
-	moves.rb = 0;
-	moves.rr = 0;
-	moves.total = 0;
-	return (moves);
-}
+
 
 int	main(int argc, char **argv)
 {
@@ -68,9 +47,6 @@ int	main(int argc, char **argv)
 	if (is_sorted(stack_a))
 		return (0);
 	try_smallsort(&stack_a, &stack_b);
-	try_bigsort(&stack_a, &stack_b, &moves);
-
-	//print_stack(stack_a, "A");
-//	print_stack(stack_b, "B");
+	big_sort(&stack_a, &stack_b, &moves);
 	return (0);
 }

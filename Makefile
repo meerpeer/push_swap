@@ -4,7 +4,7 @@ CC = gcc
 
 HEADERFILES = include/push_swap.h
 
-SRC_FILES = main.c parser.c listfunctions.c helperfunctions.c smallsort.c\
+SRC_FILES = main.c parser.c list_functions.c utils.c smallsort.c list_utils.c\
 			op_swap.c op_rotate.c op_push.c operations.c\
 			bigsort.c move_counter.c\
 

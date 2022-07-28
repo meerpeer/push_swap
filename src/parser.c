@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 13:38:03 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/25 20:15:08 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   parser.c                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/15 13:38:03 by mevan-de      #+#    #+#                 */
+/*   Updated: 2022/07/28 13:40:36 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,10 @@ void	list_set_rank(t_stack *lst, int total)
 	return ;
 }
 
-void	error_exit(void)
-{
-	ft_printf("Error\n");
-	exit (1);
-}
-
 t_stack	*create_linked_number_list(int *numbers)
 {
 	t_stack	*number_list;
-	int			i;
+	int		i;
 
 	i = 0;
 	number_list = NULL;
@@ -64,13 +58,6 @@ t_stack	*create_linked_number_list(int *numbers)
 	return (number_list);
 }
 
-/*
-while (numbers[i])
-	{
-		ft_printf("%i\n", numbers[i]);
-		i++;
-	}
-*/
 t_stack	*parse_input(int argc, char **argv)
 {
 	int			i;
