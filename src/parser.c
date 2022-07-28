@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 13:38:03 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/28 13:40:36 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/28 15:14:18 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	list_set_rank(t_stack *lst, int total)
 {
-	int			rank;
+	int		rank;
 	t_stack	*temp_lst;
 	t_stack	*current_lowest_element;
 

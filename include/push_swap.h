@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 13:10:18 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/28 13:47:33 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/28 14:38:00 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,19 @@ typedef struct s_moves
 }					t_moves;
 
 // parsing
-t_stack		*parse_input(int argc, char **argv);
+t_stack	*parse_input(int argc, char **argv);
 
 // LIST FUNCTIONS
 
-t_stack		*lstnew_element(int number, int rank);
-void		list_add_to_back(t_stack **lst, t_stack *new_number);
-t_stack		*lst_last(t_stack *lst);
-void		lstadd_back(t_stack **lst, t_stack *new_number);
-void		lstadd_front(t_stack **lst, t_stack *new);
-int			lstsize(t_stack *lst);
+t_stack	*lstnew_element(int number, int rank);
+void	list_add_to_back(t_stack **lst, t_stack *new_number);
+t_stack	*lst_last(t_stack *lst);
+void	lstadd_back(t_stack **lst, t_stack *new_number);
+void	lstadd_front(t_stack **lst, t_stack *new);
+int		lstsize(t_stack *lst);
 
 // MAYBE REMOVE?
 void	print_stack(t_stack *stack, char *stack_name);
-
 
 // HELPER FUNCTIONS
 
@@ -65,7 +64,6 @@ int		get_rank_index(t_stack *stack, int rank);
 int		get_rotate_count(t_stack *stack, int index);
 int		ft_abs(int i);
 void	error_exit(void);
-
 
 t_moves	init_moves(void);
 

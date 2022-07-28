@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   op_swap.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 11:24:12 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/25 20:15:08 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   op_swap.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/21 11:24:12 by mevan-de      #+#    #+#                 */
+/*   Updated: 2022/07/28 14:43:37 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 t_bool	swap(t_stack **stack)
 {
@@ -19,7 +18,7 @@ t_bool	swap(t_stack **stack)
 	t_stack	*first_element;
 
 	first_element = *stack;
-	if (!first_element->next)
+	if (!first_element->next || !(*stack))
 		return (FALSE);
 	third_element = first_element->next->next;
 	first_element->next->next = first_element;

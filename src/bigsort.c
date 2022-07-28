@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/25 20:12:40 by merel         #+#    #+#                 */
-/*   Updated: 2022/07/28 13:41:03 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/28 14:38:31 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,25 +88,11 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, t_moves *moves)
 	while (*stack_b)
 	{
 		set_lowest_nr_moves(stack_a, stack_b, moves);
-		//ft_printf("moves->rr = %i\n", moves->rr);
-		// ft_printf("moves->rb = %i\n", moves->rb);
-		// ft_printf("moves->rr = %i\n", moves->rr);
 		do_moves(stack_a, stack_b, moves);
 		operation("pa", stack_a, stack_b);
-		//print_stack(*stack_a, "A");
-		//print_stack(*stack_b, "B");
 	}
-				// set_lowest_nr_moves(stack_a, stack_b, moves);
-				// print_stack(*stack_a, "A");
-				// print_stack(*stack_b, "b");
-				// operation("rr", stack_a, stack_b);
-				// print_stack(*stack_a, "A");
-				// print_stack(*stack_b, "b");
 	if (is_sorted(*stack_a))
 		ft_printf("sorted\n");
-	//	exit (0);
-//	print_stack(*stack_a, "A");
-//	ft_printf("rotating to top = %i\n", get_rank_index(*stack_a, 0));
 	rotate_element_to_top(stack_a, get_rank_index(*stack_a, 0), 'a');
 	return ;
 }
