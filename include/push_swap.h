@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 13:10:18 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/27 15:07:45 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   Push_Swap.h                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/15 13:10:18 by mevan-de      #+#    #+#                 */
+/*   Updated: 2022/07/28 12:35:46 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	set_lowest_nr_moves(t_stack **stack_a, t_stack **stack_b,
 // OPERATIONS
 
 void	operation(char *op_name, t_stack **stack_a, t_stack **stack_b);
+t_bool	rotation_operation(t_stack **stack_a, t_stack **stack_b, char *op_name);
 void	rotate_lowest_to_top(t_stack **stack_a);
 void	rotate_element_to_top(t_stack **stack, int index, char stack_letter);
 

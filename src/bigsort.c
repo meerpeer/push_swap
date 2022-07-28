@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   bigsort.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 20:12:40 by merel             #+#    #+#             */
-/*   Updated: 2022/07/27 18:37:07 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   bigsort.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/25 20:12:40 by merel         #+#    #+#                 */
+/*   Updated: 2022/07/28 12:43:28 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	pre_sort(t_stack **stack_a, t_stack **stack_b)
 		{
 			if (stack_iter->rank < max_range)
 			{
-				rotate_element_to_top(stack_a, get_rank_index(*stack_a, 
-					stack_iter->rank), 'a');
+				rotate_element_to_top(stack_a, get_rank_index(*stack_a,
+						stack_iter->rank), 'a');
 				operation("pb", stack_a, stack_b);
 				stack_iter = *stack_a;
 			}
@@ -77,6 +77,9 @@ void	try_bigsort(t_stack **stack_a, t_stack **stack_b, t_moves *moves)
 	while (*stack_b)
 	{
 		set_lowest_nr_moves(stack_a, stack_b, moves);
+		//ft_printf("moves->rr = %i\n", moves->rr);
+		// ft_printf("moves->rb = %i\n", moves->rb);
+		// ft_printf("moves->rr = %i\n", moves->rr);
 		do_moves(stack_a, stack_b, moves);
 		operation("pa", stack_a, stack_b);
 		//print_stack(*stack_a, "A");

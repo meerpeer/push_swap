@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   move_counter.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 14:48:40 by merel             #+#    #+#             */
-/*   Updated: 2022/07/27 18:36:35 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   move_counter.c                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/27 14:48:40 by merel         #+#    #+#                 */
+/*   Updated: 2022/07/28 12:45:19 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,11 @@ int	get_rr_count(int ra_ops, int rb_ops)
 	int	adjust;
 
 	rr_ops = 0; 
-//	adjust = 0; //remove
 	if (ra_ops > 0 && rb_ops > 0)
 		adjust = 1;
 	else if (ra_ops < 0 && rb_ops < 0)
 		adjust = -1;
-	else 
+	else
 		return (0);
 	while (ra_ops != 0 && rb_ops != 0)
 	{
@@ -80,15 +79,14 @@ void	set_lowest_nr_moves(t_stack **stack_a, t_stack **stack_b,
 	iter_b = *stack_b;
 	while (iter_b)
 	{
-		cur_moves.ra = get_rotate_count(*stack_a, get_insert_index(stack_a, 
-			iter_b->rank));
-		cur_moves.rb  = get_rotate_count(*stack_b, 
-			get_rank_index(*stack_b, iter_b->rank));
+		cur_moves.ra = get_rotate_count(*stack_a, get_insert_index(stack_a,
+					iter_b->rank));
+		cur_moves.rb = get_rotate_count(*stack_b,
+				get_rank_index(*stack_b, iter_b->rank));
 		cur_moves.rr = get_rr_count(cur_moves.ra, cur_moves.rb);
 		cur_moves.ra -= cur_moves.rr;
 		cur_moves.rb -= cur_moves.rr;
-		cur_moves.total = ft_abs(cur_moves.ra) + ft_abs(cur_moves.rb)
-			+ ft_abs(cur_moves.rr);
+		cur_moves.total = ft_abs(cur_moves.ra) + ft_abs(cur_moves.rb) + ft_abs(cur_moves.rr);
 		if (moves->total == 0)
 			*moves = cur_moves;
 		else if (ft_abs(moves->total) > ft_abs(cur_moves.total))
