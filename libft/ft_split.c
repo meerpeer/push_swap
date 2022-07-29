@@ -6,7 +6,7 @@
 /*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/09 10:25:08 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/05/19 13:14:41 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/29 15:01:44 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,6 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	word_count = get_word_count(s, c);
 	result = ft_malloc(sizeof(char *) * (word_count + 1));
-	if (!result)
-		return (NULL);
 	n_ft_malloc = put_words(s, result, c, word_count);
 	if (n_ft_malloc < word_count)
 	{

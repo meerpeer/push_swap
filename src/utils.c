@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 12:11:19 by merel             #+#    #+#             */
-/*   Updated: 2022/07/29 11:48:40 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   utils.c                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/20 12:11:19 by merel         #+#    #+#                 */
+/*   Updated: 2022/07/29 14:57:50 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	print_stack(t_stack *stack, char *stack_name)
 	ft_printf("------------\n");
 	while (stack)
 	{
-		ft_printf("number = %i\n", stack->number);
+		ft_printf("number = %i\n", stack->rank);
 		stack = stack->next;
 	}
 	ft_printf("------------\n");
@@ -33,7 +33,9 @@ int	ft_abs(int i)
 
 t_bool	is_int(char *str)
 {
-	while (ft_isdigit(*str) || *str == '-')
+	if (*str == '-')
+		str++;
+	while (ft_isdigit(*str))
 		str++;
 	if (*str)
 		return (FALSE);

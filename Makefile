@@ -1,5 +1,6 @@
 NAME = push_swap
 CFLAGS ?= -Wall -Wextra -Werror
+# -fsanitize=address -g
 CC = gcc
 
 HEADERFILES = include/push_swap.h
@@ -21,7 +22,7 @@ all: $(NAME)
 $(NAME): $(OBJS) $(HEADERFILES)
 	@make -C $(LIBFT_DIR)
 	@make -C $(PRINTF_DIR)
-	$(CC) $(OBJS) $(LIBFT) $(PRINTF) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(PRINTF) -o $(NAME)
 
 obj/%.o: src/%.c 
 	@mkdir -p obj

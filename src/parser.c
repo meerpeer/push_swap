@@ -6,7 +6,7 @@
 /*   By: merel <merel@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 13:38:03 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/29 13:50:22 by mevan-de      ########   odam.nl         */
+/*   Updated: 2022/07/29 15:08:41 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ void	list_set_rank(t_stack *lst, int total)
 	return ;
 }
 
-t_stack	*create_linked_number_list(int *numbers)
+t_stack	*create_linked_number_list(int *numbers, int size)
 {
 	t_stack	*number_list;
 	int		i;
 
 	i = 0;
 	number_list = NULL;
-	while (numbers[i])
+	while (i < size)
 	{
 		if (!number_list)
 			number_list = lstnew_element(numbers[i], -1);
@@ -58,39 +58,40 @@ t_stack	*create_linked_number_list(int *numbers)
 	return (number_list);
 }
 
-int	*create_number_list(char **argv)
+int	create_number_list(char **argv, int **numbers)
 {
 	int	i;
-	int	*numbers;
 
 	i = 0;
 	while (argv[i])
 		i++;
-	numbers = ft_calloc(i + 1, sizeof(int));
+	*numbers = ft_calloc(i + 1, sizeof(int));
 	i = 0;
 	while (argv[i])
 	{
 		if (!is_int(argv[i]))
 			error_exit();
-		numbers[i] = ft_atoi(argv[i]);
-		if (is_double(numbers, i))
+		(*numbers)[i] = ft_atoi(argv[i]);
+		if (is_double(*numbers, i))
 			error_exit();
 		i++;
 	}
-	i = 1;
-	return (numbers);
+	return (i);
 }
 
 t_stack	*parse_input(char **argv)
 {
 	t_stack	*number_list;
 	int		*numbers;
+	int		size;
 
 	number_list = NULL;
-	numbers = create_number_list(argv);
-	if (numbers)
-		number_list = create_linked_number_list(numbers);
-	list_set_rank(number_list, get_array_size(numbers));
+	numbers = NULL;
+	size = create_number_list(argv, &numbers);
+	if (!numbers)
+		exit (1);
+	number_list = create_linked_number_list(numbers, size);
+	list_set_rank(number_list, size);
 	free(numbers);
 	return (number_list);
 }
