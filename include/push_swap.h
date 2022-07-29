@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 13:10:18 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/29 11:31:14 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   Push_Swap.h                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/15 13:10:18 by mevan-de      #+#    #+#                 */
+/*   Updated: 2022/07/29 13:57:55 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,11 @@ typedef struct s_moves
 	int		total;
 }					t_moves;
 
-// parsing
+// PARSING
+
 t_stack	*parse_input(char **argv);
 
-// LIST FUNCTIONS
+// STACK FUNCTIONS
 
 t_stack	*lstnew_element(int number, int rank);
 void	list_add_to_back(t_stack **lst, t_stack *new_number);
@@ -49,8 +50,6 @@ t_stack	*lst_last(t_stack *lst);
 void	lstadd_back(t_stack **lst, t_stack *new_number);
 void	lstadd_front(t_stack **lst, t_stack *new);
 int		lstsize(t_stack *lst);
-
-// MAYBE REMOVE?
 void	print_stack(t_stack *stack, char *stack_name);
 
 // HELPER FUNCTIONS
@@ -67,10 +66,9 @@ void	error_exit(void);
 int		get_array_size(int *array);
 t_moves	init_moves(void);
 
-// small sort stack (up until 5)
-void	try_smallsort(t_stack **stack_a, t_stack **stack_b);
+// SORTING
 
-// big sort
+void	try_smallsort(t_stack **stack_a, t_stack **stack_b);
 void	big_sort(t_stack **stack_a, t_stack **stack_b, t_moves *moves);
 void	set_lowest_nr_moves(t_stack **stack_a, t_stack **stack_b,
 			t_moves *moves);
@@ -81,15 +79,6 @@ void	operation(char *op_name, t_stack **stack_a, t_stack **stack_b);
 t_bool	rotation_operation(t_stack **stack_a, t_stack **stack_b, char *op_name);
 void	rotate_lowest_to_top(t_stack **stack_a);
 void	rotate_element_to_top(t_stack **stack, int index, char stack_letter);
-
-/*
-Takes a stack and swaps the top 2 elements
-Will not do anything if there is only one element
-Returns TRUE and prints 'sa' or 'sb' if succesfull
-
-stack = stack to swap
-c     = stack name (only takes 'a' or 'b')
-*/
 t_bool	swap(t_stack **stack);
 t_bool	swap_both(t_stack **stack_a, t_stack **stack_b);
 t_bool	rotate(t_stack **stack);

@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 13:14:33 by mevan-de          #+#    #+#             */
-/*   Updated: 2022/07/29 11:45:18 by merel            ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   main.c                                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: merel <merel@student.42.fr>                  +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/15 13:14:33 by mevan-de      #+#    #+#                 */
+/*   Updated: 2022/07/29 13:57:29 by mevan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	on_exit(void)
-{
-	//system("leaks push_swap");
-	return ;
-}
+// void	on_exit(void)
+// {
+// 	system("leaks push_swap");
+// 	return ;
+// }
 
 int	main(int argc, char **argv)
 {
@@ -25,7 +25,6 @@ int	main(int argc, char **argv)
 	t_moves	moves;
 	char	**split;
 
-	atexit(on_exit);
 	if (is_int(argv[1]))
 	{
 		if (argc <= 1)
