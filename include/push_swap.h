@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   Push_Swap.h                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: merel <merel@student.42.fr>                  +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/15 13:10:18 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/28 14:38:00 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/15 13:10:18 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/29 11:31:14 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct s_moves
 }					t_moves;
 
 // parsing
-t_stack	*parse_input(int argc, char **argv);
+t_stack	*parse_input(char **argv);
 
 // LIST FUNCTIONS
 
@@ -64,7 +64,7 @@ int		get_rank_index(t_stack *stack, int rank);
 int		get_rotate_count(t_stack *stack, int index);
 int		ft_abs(int i);
 void	error_exit(void);
-
+int		get_array_size(int *array);
 t_moves	init_moves(void);
 
 // small sort stack (up until 5)

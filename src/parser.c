@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   parser.c                                           :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: merel <merel@student.42.fr>                  +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/15 13:38:03 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/28 15:14:18 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   parser.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/15 13:38:03 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/29 11:49:14 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,29 +58,40 @@ t_stack	*create_linked_number_list(int *numbers)
 	return (number_list);
 }
 
-t_stack	*parse_input(int argc, char **argv)
+int	*create_number_list(char **argv)
 {
-	int			i;
-	t_stack	*number_list;
-	int			*numbers;
+	int	i;
+	int	*numbers;
 
-	number_list = NULL;
-	numbers = ft_calloc(argc + 1, sizeof(int));
 	i = 0;
-	if (argc <= 1)
-		error_exit();
-	while (argc - i >= 1)
+	while (argv[i])
+		i++;
+	numbers = ft_calloc(i + 1, sizeof(int));
+	i = 0;
+	while (argv[i])
 	{
-		if (!is_int(argv[i + 1]))
+		if (!is_int(argv[i]))
 			error_exit();
-		numbers[i] = ft_atoi(argv[i + 1]);
+		numbers[i] = ft_atoi(argv[i]);
 		if (is_double(numbers, i))
 			error_exit();
 		i++;
 	}
+	i = 1;
+
+	return (numbers);
+}
+
+t_stack	*parse_input(char **argv)
+{
+	t_stack	*number_list;
+	int		*numbers;
+
+	number_list = NULL;
+	numbers = create_number_list(argv);
 	if (numbers)
 		number_list = create_linked_number_list(numbers);
+	list_set_rank(number_list, get_array_size(numbers));
 	free(numbers);
-	list_set_rank(number_list, argc);
 	return (number_list);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   list_utils.c                                       :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: mevan-de <mevan-de@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/28 13:34:26 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/28 13:35:29 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/28 13:34:26 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/29 11:27:55 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,14 @@ t_bool	is_sorted(t_stack *stack)
 		stack = stack->next;
 	}
 	return (TRUE);
+}
+
+int	get_array_size(int	*array)
+{
+	int	size;
+
+	size = 0;
+	while(array[size])
+		size++;
+	return (size);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: merel <merel@student.42.fr>                  +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/15 13:14:33 by mevan-de      #+#    #+#                 */
-/*   Updated: 2022/07/28 15:26:06 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/15 13:14:33 by mevan-de          #+#    #+#             */
+/*   Updated: 2022/07/29 11:45:18 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,29 @@
 
 void	on_exit(void)
 {
-	system("leaks push_swap");
+	//system("leaks push_swap");
 	return ;
 }
 
 int	main(int argc, char **argv)
 {
-	t_stack		*stack_a;
-	t_stack		*stack_b;
-	t_moves		moves;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	t_moves	moves;
+	char	**split;
 
 	atexit(on_exit);
-	stack_a = parse_input(argc - 1, argv);
+	if (is_int(argv[1]))
+	{
+		if (argc <= 1)
+			error_exit();
+		stack_a = parse_input(&argv[1]);
+	}
+	else
+	{
+		split = ft_split(argv[1], ' ');
+		stack_a = parse_input(split);
+	}
 	stack_b = NULL;
 	moves = init_moves();
 	if (is_sorted(stack_a))

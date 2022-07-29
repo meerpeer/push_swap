@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   bigsort.c                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: merel <merel@student.42.fr>                  +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/25 20:12:40 by merel         #+#    #+#                 */
-/*   Updated: 2022/07/28 14:38:31 by mevan-de      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   bigsort.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merel <merel@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 20:12:40 by merel             #+#    #+#             */
+/*   Updated: 2022/07/29 11:46:35 by merel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, t_moves *moves)
 		operation("pa", stack_a, stack_b);
 	}
 	if (is_sorted(*stack_a))
-		ft_printf("sorted\n");
+		exit (0);
 	rotate_element_to_top(stack_a, get_rank_index(*stack_a, 0), 'a');
 	return ;
 }
